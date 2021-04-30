@@ -1,5 +1,5 @@
 let scores, current, player, active;
-let previousSix = true;
+let previousSix = false;
 hideDice();
 
 document.getElementById("btn-new").addEventListener('click', function () {
@@ -61,14 +61,14 @@ function nextPlayer() {
 }
 
 function hideDice() {
-    document.getElementById('dice').style.display = "none";
+    document.getElementById('dice').classList.add('d-none');
 }
 
 function showDice(dice1, dice2) {
     redDice();
     document.getElementById('dice-1').innerHTML = dice1;
     document.getElementById('dice-2').innerHTML = dice2;
-    document.getElementById('dice').style.display = "block";
+    document.getElementById('dice').classList.remove('d-none');
 }
 
 function grayDice() {
