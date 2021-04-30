@@ -30,6 +30,7 @@ document.getElementById("btn-roll").addEventListener('click', function () {
 
         if (previousSix && currentSix) {
             scores[player] = 0;
+            document.getElementById('player-' + player + '-total').innerHTML = scores[player]
             nextPlayer();
         }
 
