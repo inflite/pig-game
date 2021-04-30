@@ -8,7 +8,6 @@ document.getElementById("btn-new").addEventListener('click', function () {
     current = 0;
     player = 0;
     newGame();
-    hideDice();
 });
 
 document.getElementById("btn-roll").addEventListener('click', function () {
@@ -16,7 +15,6 @@ document.getElementById("btn-roll").addEventListener('click', function () {
         let dice1 = Math.floor(Math.random() * 6) + 1;
         let dice2 = Math.floor(Math.random() * 6) + 1;
         let currentSix;
-        redDice();
         showDice(dice1, dice2);
 
         if (dice1 == 6 || dice2 == 6) {
@@ -46,10 +44,7 @@ document.getElementById("btn-hold").addEventListener('click', function () {
         scores[player] += current;
         document.getElementById('player-' + player + '-total').innerHTML = scores[player];
         if (scores[player] >= 100) {
-            document.getElementById('player-' + player).classList.remove('border-danger');
-            document.getElementById('player-' + player).classList.add('border-success');
-            document.getElementById('player-' + player).classList.add('bg-success');
-            document.getElementById('player-' + player).classList.add('text-light');
+            declareWinner();
             active = false;
         } else {
             nextPlayer();
@@ -62,11 +57,7 @@ function nextPlayer() {
     player === 0 ? player = 1 : player = 0;
     current = 0;
     previousSix = false;
-    document.getElementById('player-0-current').innerHTML = '0';
-    document.getElementById('player-1-current').innerHTML = '0';
-    document.getElementById('player-0').classList.toggle('border-danger');
-    document.getElementById('player-1').classList.toggle('border-danger');
-    grayDice();
+    changeTurn();
 }
 
 function hideDice() {
@@ -74,6 +65,7 @@ function hideDice() {
 }
 
 function showDice(dice1, dice2) {
+    redDice();
     document.getElementById('dice-1').innerHTML = dice1;
     document.getElementById('dice-2').innerHTML = dice2;
     document.getElementById('dice').style.display = "block";
@@ -98,16 +90,29 @@ function newGame() {
     document.getElementById('player-1-current').innerHTML = '0';
     document.getElementById('player-0-total').innerHTML = '0';
     document.getElementById('player-1-total').innerHTML = '0';
-
     document.getElementById('player-0').classList.remove('border-danger');
     document.getElementById('player-0').classList.remove('border-success');
     document.getElementById('player-0').classList.remove('bg-success');
     document.getElementById('player-0').classList.remove('text-light');
-
     document.getElementById('player-1').classList.remove('border-danger');
     document.getElementById('player-1').classList.remove('border-success');
     document.getElementById('player-1').classList.remove('bg-success');
     document.getElementById('player-1').classList.remove('text-light');
-
     document.getElementById('player-0').classList.add('border-danger');
+    hideDice();
+}
+
+function changeTurn() {
+    document.getElementById('player-0-current').innerHTML = '0';
+    document.getElementById('player-1-current').innerHTML = '0';
+    document.getElementById('player-0').classList.toggle('border-danger');
+    document.getElementById('player-1').classList.toggle('border-danger');
+    grayDice();
+}
+
+function declareWinner() {
+    document.getElementById('player-' + player).classList.remove('border-danger');
+    document.getElementById('player-' + player).classList.add('border-success');
+    document.getElementById('player-' + player).classList.add('bg-success');
+    document.getElementById('player-' + player).classList.add('text-light');
 }

@@ -22,58 +22,68 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="rules.html">Rules</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div class="container my-4 d-flex flex-row justify-content-center">
-        <button type="button" class="btn btn-light" id="btn-new">
-            <span class="me-2"><i class="bi bi-plus-circle" style="color: crimson;"></i></span>New Game
-        </button>
-    </div>
+    <main>
+        <div class="container my-4 d-flex flex-row justify-content-center">
+            <button type="button" class="btn btn-light" id="btn-new">
+                <span class="me-2"><i class="bi bi-plus-circle" style="color: crimson;"></i></span>New Game
+            </button>
+        </div>
 
-    <div class="container d-flex flex-row justify-content-evenly align-items-center">
-        <div class="card d-flex flex-row" style="width: 18rem;" id="player-0">
-            <div class="card-body">
-                <h5 class="card-title text-center">Player 1</h5>
-                <p class="card-text fs-1 text-center" id="player-0-total">0</p>
-                <div class="text-center">
-                    <div>Current</div>
-                    <div class="card-text" id="player-0-current">0</div>
+        <div class="container d-flex flex-row justify-content-evenly align-items-center">
+            <div class="card d-flex flex-row border-2" style="width: 18rem;" id="player-0">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Player 1</h5>
+                    <p class="card-text fs-1 text-center" id="player-0-total">0</p>
+                    <div class="text-center">
+                        <div>Current</div>
+                        <div class="card-text" id="player-0-current">0</div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex flex-column align-items-center" style="width: 6rem;">
+                <div id="dice">
+                    <div class="bg-danger text-light fw-bold px-3 py-2 mb-4" id="dice-1">0</div>
+                    <div class="bg-danger text-light fw-bold px-3 py-2" id="dice-2">0</div>
+                </div>
+            </div>
+            <div class="card d-flex flex-row border-2" style="width: 18rem;" id="player-1">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Player 2</h5>
+                    <p class="card-text fs-1 text-center" id="player-1-total">0</p>
+                    <div class="text-center">
+                        <div>Current</div>
+                        <div class="card-text" id="player-1-current">0</div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="d-flex flex-column align-items-center" style="width: 6rem;">
-            <div id="dice">
-                <div class="bg-danger text-light fw-bold px-3 py-2 mb-4" id="dice-1">0</div>
-                <div class="bg-danger text-light fw-bold px-3 py-2" id="dice-2">0</div>
-            </div>
-        </div>
-        <div class="card d-flex" style="width: 18rem;" id="player-1">
-            <div class="card-body">
-                <h5 class="card-title text-center">Player 2</h5>
-                <p class="card-text fs-1 text-center" id="player-1-total">0</p>
-                <div class="text-center">
-                    <div>Current</div>
-                    <div class="card-text" id="player-1-current">0</div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="container my-4">
-        <div class="d-flex flex-row justify-content-center">
-            <button type="button" class="btn btn-light me-2" id="btn-roll">
-                <span class="me-2"><i class="bi bi-arrow-repeat" style="color: crimson;"></i></span>Roll Dice
-            </button>
-            <button type="button" class="btn btn-light" id="btn-hold">
-                <span class="me-2"><i class="bi bi-save" style="color: crimson;"></i></span>Hold
-            </button>
+        <div class="container my-4">
+            <div class="d-flex flex-row justify-content-center">
+                <button type="button" class="btn btn-light me-2" id="btn-roll">
+                    <span class="me-2"><i class="bi bi-arrow-repeat" style="color: crimson;"></i></span>Roll Dice
+                </button>
+                <button type="button" class="btn btn-light" id="btn-hold">
+                    <span class="me-2"><i class="bi bi-save" style="color: crimson;"></i></span>Hold
+                </button>
+            </div>
         </div>
-    </div>
+    </main>
+
+
+    <footer class="fixed-bottom d-flex justify-content-center">
+        <p class="text-muted">&copy; 2021 Tom Tourwé</p>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
