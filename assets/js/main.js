@@ -78,6 +78,7 @@ function startGame() {
     player0.classList.remove('text-danger');
     player1.classList.remove('text-danger');
     player0.classList.add('text-danger');
+    holdText.innerHTML = 'Hold'
     hideDice();
 }
 
